@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+  <title>Focus Gate</title>
+</head>
+<body>
+  <header class="head">
+    <div class="head__brand">
+      <span class="head__target" aria-hidden="true"></span>
+      <div class="head__title">
+        <h1>Focus Gate</h1>
+        <p>State your purpose before you enter.</p>
+      </div>
+    </div>
+    <label class="switch" title="Turn the gate on or off">
+      <input type="checkbox" id="toggle">
+      <span class="switch__track" aria-hidden="true"><span class="switch__knob"></span></span>
+      <span class="switch__label" id="toggleLabel">On</span>
+    </label>
+  </header>
+
+  <section class="panel">
+    <p class="panel__label">Gate a site</p>
+    <form id="addForm" class="add" novalidate>
+      <input id="addInput" type="text" placeholder="example.com" autocomplete="off" spellcheck="false" aria-label="Site to gate">
+      <button type="submit" class="add__btn" title="Add to gate list">Add</button>
+    </form>
+    <button id="currentTab" class="current" type="button">Use the site in the current tab</button>
+    <p class="form-error" id="formError" hidden></p>
+  </section>
+
+  <section class="panel">
+    <div class="panel__row">
+      <p class="panel__label">Gated sites</p>
+      <p class="panel__count" id="count"></p>
+    </div>
+    <ul class="list" id="list"></ul>
+    <p class="empty" id="empty" hidden>
+      No sites gated yet. Add the one that eats your time — the gate will ask
+      for your purpose before letting you in.
+    </p>
+  </section>
+
+  <footer class="foot">
+    Drag the banner to move it out of the way; double-click to snap it back
+    to the top. Every visit asks for a fresh goal — nothing is shared across
+    tabs or sites. Press <span class="foot__key">Done</span> to clear it.
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
